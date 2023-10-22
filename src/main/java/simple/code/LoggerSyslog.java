@@ -1,6 +1,6 @@
 package simple.code;
 
-import org.slf4j.LoggerFactory;
+//import org.slf4j.LoggerFactory;
 
 public class LoggerSyslog {
 
