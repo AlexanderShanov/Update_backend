@@ -14,7 +14,7 @@ public class pool {
         System.out.println("10");
         config.setDriverClassName("org.postgresql.Driver");
 
-        config.setJdbcUrl("jdbc:postgresql://localhost:5432/test");
+        config.setJdbcUrl("jdbc:postgresql://localhost:5432/updater");
         config.setUsername("postgres");
         config.setPassword("postgres");
         config.addDataSourceProperty("cachePrepStmts", "true");

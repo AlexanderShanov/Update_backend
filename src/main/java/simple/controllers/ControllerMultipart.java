@@ -45,33 +45,33 @@ public class ControllerMultipart {
         return null;
     }
 
-    @GetMapping("/ControllerMultipart2/{filename:.+}/{fileversion:.+}")
+    @GetMapping("/ControllerMultipart2/{fileid:.+}/{fileversion:.+}")
     @ResponseBody
     //public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
-    public ResponseEntity<byte[]> getFile(@PathVariable String filename, @PathVariable String fileversion) {
+    public ResponseEntity<byte[]> getFile(@PathVariable String fileid, @PathVariable String fileversion) {
 
 
         Integer id_ = null;
         try{
-            id_ = Integer.parseInt(filename);
+            id_ = Integer.parseInt(fileid);
         }
         catch (Exception e){
 
         }
 
         if(id_ != null){
-            System.out.println("Get file: request received. Id = " + filename);
-            LoggerSyslog.logger.info("Get file: request received. Id = " + filename);
+            System.out.println("Get file: request received. Id = " + fileid);
+            //LoggerSyslog.logger.info("Get file: request received. Id = " + fileid);
 
 
             try {
-                System.out.println(filename);
+                System.out.println(fileid);
                 long time1 = System.currentTimeMillis();
                 GetFileFromBD getFileFromBD = new GetFileFromBD();
                 byte[] bytes = getFileFromBD.selectRecord(id_);
                 long time2 = System.currentTimeMillis();
 
-                LoggerSyslog.logger.info("That get from database id = {}, lenght = {}, time = {}", id_, bytes.length, time2 - time1);
+                //LoggerSyslog.logger.info("That get from database id = {}, lenght = {}, time = {}", id_, bytes.length, time2 - time1);
                 System.out.println(bytes.length);
 
 
@@ -86,7 +86,7 @@ public class ControllerMultipart {
             }
         }
         else{
-            LoggerSyslog.logger.error("File id is not correct: " + filename);
+            //LoggerSyslog.logger.error("File id is not correct: " + fileid);
         }
 
 

@@ -24,12 +24,15 @@ import simple.data.RequestValueFolder;
 
 import java.io.*;
 import java.net.URL;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 @RestController
 @RequestMapping(value = "/simple2", method = RequestMethod.POST, consumes ="application/json", produces ="application/json")
 //@RequestMapping(value = "/simple2", method = RequestMethod.POST)
 public class SimpleController2 {
+    private final org.slf4j.Logger LOGGER = LoggerFactory.getLogger(SimpleController2.class);
+
     @PostMapping("/simple2")
     public ResponseEntity<String> simple2(@RequestBody String inputData) {
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -58,11 +61,13 @@ public class SimpleController2 {
     @PostMapping("/getAllNameVersion")
     public ResponseEntity<String> getAllNameVersion(@RequestBody String inputData) {
         HttpHeaders responseHeaders = new HttpHeaders();
-        LoggerSyslog.logger.warn("Get all name version: Request received");
+        //LoggerSyslog.logger.warn("Get all name version: Request received");
         System.out.println("Get all name version: Request received");
         GetAllBuildVersions getAllBuildVersions = new GetAllBuildVersions();
         System.out.println("2");
         String json = getAllBuildVersions.getBuildVersions();
+
+        LOGGER.error("getAllNameVersionLogger");
 
         System.out.println("getAllNameVersion");
 
