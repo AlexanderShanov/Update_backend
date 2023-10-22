@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="simple:war2">
+    <output-path>$PROJECT_DIR$/../../../../../../Program Files/Apache Software Foundation/Tomcat 9.0/webapps</output-path>
+    <root id="archive" name="simple.war">
+      <element id="artifact" artifact-name="simple:war exploded" />
+    </root>
+  </artifact>
+</component>
