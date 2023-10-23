@@ -18,7 +18,7 @@ import java.sql.SQLException;
 
 public class GetAllBuildVersions {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/updater";
+    private static final String URL = "jdbc:postgresql://localhost:5432/test";
 
     private static final String USER = "postgres";
 

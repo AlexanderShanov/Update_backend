@@ -63,7 +63,7 @@ import org.apache.logging.log4j.Logger;
 
         return ResponseEntity.ok()
                 .headers(responseHeaders)
-                .body("{\"pizdec\":\"pizdec12__9_23\"}");
+                .body("{\"pizdec\":\"pizdec12__12_23\"}");
     }
 
 
@@ -75,7 +75,7 @@ import org.apache.logging.log4j.Logger;
         GetAllBuildVersions getAllBuildVersions = new GetAllBuildVersions();
         System.out.println("2");
         String json = getAllBuildVersions.getBuildVersions();
-
+        System.out.println("getAllNameVersion132");
         LOGGER.error("getAllNameVersionLogger");
 
         System.out.println("getAllNameVersion");
