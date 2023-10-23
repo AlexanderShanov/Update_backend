@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 public class GetFileFromBD {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/test";
+    private static final String URL = "jdbc:postgresql://localhost:5432/updater";
 
     private static final String USER = "postgres";
 
@@ -33,7 +33,7 @@ public class GetFileFromBD {
         byte[] fileArray2 = null;
         try{
 
-            var connection = pool.getConnection();
+            Connection connection = pool.getConnection();
             try(var pst = connection.prepareStatement("select value from files where id = ?")){
                 pst.setInt(1, id);
                 try(var rs = pst. executeQuery()){
@@ -42,6 +42,9 @@ public class GetFileFromBD {
                         System.out.println("fileArray2.length: "+ fileArray2.length);
                     }
                 }
+            }
+            finally {
+                connection.close();
             }
         }
         catch (Exception e){

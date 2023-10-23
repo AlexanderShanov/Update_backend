@@ -14,6 +14,9 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.client.LaxRedirectStrategy;
+//import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +27,21 @@ import simple.data.RequestValueFolder;
 
 import java.io.*;
 import java.net.URL;
-
+//import java.util.logging.Logger;
+/*import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;*/
 
 @RestController
 @RequestMapping(value = "/simple2", method = RequestMethod.POST, consumes ="application/json", produces ="application/json")
 //@RequestMapping(value = "/simple2", method = RequestMethod.POST)
 public class SimpleController2 {
+    private final Logger LOGGER = LoggerFactory.getLogger(SimpleController2.class);
+
+    /*import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+    Logger logger = LogManager.getLogger(AppListener.class);*/
+
     @PostMapping("/simple2")
     public ResponseEntity<String> simple2(@RequestBody String inputData) {
         HttpHeaders responseHeaders = new HttpHeaders();
@@ -51,18 +63,20 @@ public class SimpleController2 {
 
         return ResponseEntity.ok()
                 .headers(responseHeaders)
-                .body("{\"pizdec\":\"pizdec12__9_23\"}");
+                .body("{\"pizdec\":\"pizdec12__12_23\"}");
     }
 
 
     @PostMapping("/getAllNameVersion")
     public ResponseEntity<String> getAllNameVersion(@RequestBody String inputData) {
         HttpHeaders responseHeaders = new HttpHeaders();
-        LoggerSyslog.logger.warn("Get all name version: Request received");
+        //LoggerSyslog.logger.warn("Get all name version: Request received");
         System.out.println("Get all name version: Request received");
         GetAllBuildVersions getAllBuildVersions = new GetAllBuildVersions();
         System.out.println("2");
         String json = getAllBuildVersions.getBuildVersions();
+        System.out.println("getAllNameVersion132");
+        LOGGER.error("getAllNameVersionLogger");
 
         System.out.println("getAllNameVersion");
 

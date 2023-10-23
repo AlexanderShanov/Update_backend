@@ -52,14 +52,14 @@ public class GetAllBuildVersions {
 
             connection = pool.getConnection();
             long time2 = System.currentTimeMillis();
-            LoggerSyslog.logger.warn("Get all name version: open connection pool database, time {}", time2 - time1);
+            //LoggerSyslog.logger.warn("Get all name version: open connection pool database, time {}", time2 - time1);
             System.out.println("Get all name version: open connection pool database, time " + (time2 - time1) );
         }
         catch (Exception e) {
             long time3 = System.currentTimeMillis();
-            LoggerSyslog.logger.error("Get all name version: error open connection, time {}", time3 - time1);
+            //LoggerSyslog.logger.error("Get all name version: error open connection, time {}", time3 - time1);
             System.out.println("Get all name version: error open connection, time " + (time3 - time1));
-            LoggerSyslog.logger.error(e.toString());
+            //LoggerSyslog.logger.error(e.toString());
             return null;
         }
 
@@ -79,14 +79,14 @@ public class GetAllBuildVersions {
                 }
                 builds1 =  builds.toArray(new String[builds.size()]);
                 long time5 = System.currentTimeMillis();
-                LoggerSyslog.logger.warn("Get all name version: List received from database, time {}", time5 - time4);
+                //LoggerSyslog.logger.warn("Get all name version: List received from database, time {}", time5 - time4);
                 System.out.println("Get all name version: List received from database, time " + (time5 - time4));
             }
             catch (SQLException e){
                 long time6 = System.currentTimeMillis();
-                LoggerSyslog.logger.error("Get all name version: error request form database, time {}", time6 - time4);
+                //LoggerSyslog.logger.error("Get all name version: error request form database, time {}", time6 - time4);
                 System.out.println("Get all name version: error request form database, time "  + (time6 - time4));
-                LoggerSyslog.logger.error(e.toString());
+                //LoggerSyslog.logger.error(e.toString());
                 System.out.println(e.toString());
             }
         }

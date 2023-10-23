@@ -10,11 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29f6c75-f17f-4c6a-ad30-6ba339694d57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/config/AddResponseHeaderFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/config/AddResponseHeaderFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/code/GetAllBuildVersions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/code/GetAllBuildVersions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/simple/controllers/SimpleController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/controllers/SimpleController2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/simple.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/simple.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/simple.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/simple.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/dao/pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/dao/pool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2-spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2-spring.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +33,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -57,7 +59,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/git/home/TestRequestFrontIntoBackend/Backend/simple2/simple/pom.xml",
+    "last_opened_file_path": "C:/Work/9_java/UpData/Test_17/TestRequestFrontIntoBackend/Backend/Update_backend/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,7 +80,7 @@
   <component name="RunDashboard">
     <option name="openRunningConfigInTab" value="true" />
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.73">
+  <component name="RunManager" selected="JUnit.All in simple">
     <configuration name="All in simple" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="simple" />
       <option name="PACKAGE_NAME" value="" />
@@ -179,7 +181,6 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.All in simple" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.73" />
     </list>
     <recent_temporary>
       <list>

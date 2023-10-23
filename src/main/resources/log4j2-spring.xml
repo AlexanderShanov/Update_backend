@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+    <Properties>
+        <Property name="log-path">${sys:catalina.base}/logs/updater-backend</Property>
+    </Properties>
+
+    <Appenders>
+
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{15} - %msg%n"/>
+        </Console>
+
+        <RollingFile
+                name="RollingFile"
+                fileName="${log-path}.log"
+                filePattern="${log-path}.%i.log.gz"
+                ignoreExceptions="false">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%t] %logger{15} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="15MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="99"/>
+        </RollingFile>
+
+    </Appenders>
+    <Loggers>
+        <Logger name="test"
+                level="trace"
+                additivity="false">
+            <AppenderRef ref="RollingFile"/>
+        </Logger>
+
+        <Root level="info">
+            <!--            <AppenderRef ref="Console"/>-->
+            <AppenderRef ref="RollingFile"/>
+        </Root>
+    </Loggers>
+</Configuration>
