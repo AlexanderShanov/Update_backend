@@ -3,6 +3,10 @@ package simple.code;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import simple.controllers.SimpleController2;
+import simple.dao.pool;
 import simple.data.RequestValue;
 import simple.data.RequestValueFolder;
 import simple.data.ResponseBuildVersions;
@@ -17,21 +21,21 @@ import java.io.IOException;
 
 public class DataBaseWork {
 
-    private static final String URL = "jdbc:postgresql://localhost:5432/test";
-
-    private static final String USER = "postgres";
-
-    private static final String PASSWORD = "postgres";
+    private final Logger LOGGER = LoggerFactory.getLogger(DataBaseWork.class);
 
     public void creadeNewRelease(String json)  {
 
         try{
+            LOGGER.error("1");
             RequestValue requestValue = Serialize.deserialize(json);
-            saveToFile(requestValue, json);
+            LOGGER.error("2");
+            //saveToFile(requestValue, json);
+            LOGGER.error("3");
             saveToBD(requestValue);
+            LOGGER.error("4");
         }
         catch (Exception e){
-
+            LOGGER.error(e.toString());
         }
 
 
@@ -58,7 +62,7 @@ public class DataBaseWork {
         };
         */
         String[] folders = new String[]{
-                "C:/Work/9_java/UpData/Data/AutoCad"
+                "C:/Work/9_java/UpData/Data/AutoCad/2.Консоли"
         };
         DataBaseWork dataBaseWork  = new DataBaseWork();
         dataBaseWork.saveToBD_Test(folders);
@@ -70,7 +74,7 @@ public class DataBaseWork {
     public void saveToBD_Test(String[] filesName) throws SQLException{
         if(filesName.length >0)
         {
-            try(var connection = DriverManager.getConnection(URL, USER, PASSWORD)){
+            try(var connection = pool.getConnection()){
                 connection.setAutoCommit(false);
                 var idNewBuild = getMaxBuildVersion(connection);
                 idNewBuild++;
@@ -96,20 +100,51 @@ public class DataBaseWork {
 
     }
 
-    private void saveToBD(RequestValue requestValue){
-        for (RequestValueFolder requestValueFolder :
-                requestValue.getMyArray()) {
-            File file = new File(requestValueFolder.getCurrantUnit());
-            if(file.isFile()){
-                saveToFile(requestValueFolder.getCurrantUnit());
-            }
-            else if(file.isDirectory()){
-                //saveToBD(file);
-            }
-            else {
+    private void saveToBD(RequestValue requestValue) throws SQLException{
+        LOGGER.error("requestValue: 1" );
+        if(requestValue.getMyArray().length > 0){
+            try(var connection = pool.getConnection()) {
+                connection.setAutoCommit(false);
+                var idNewBuild = getMaxBuildVersion(connection);
+                idNewBuild++;
+                LOGGER.error("idNewBuild:" + idNewBuild);
+                String relativePath = "";
+                for (RequestValueFolder requestValueFolder  :
+                        requestValue.getMyArray()) {
+                    String fileName = requestValueFolder.getCurrantUnit();
+                    File file = new File(fileName);
+                    if(file.isFile()){
 
+                        insertRecord(connection, idNewBuild, relativePath, fileName);
+                        LOGGER.error("fileName:" + fileName);
+                        saveToFile( "save file: ile.getName(): " + file.getName() + " fileName: " + fileName);
+                    }
+                    else if(file.isDirectory()){
+                        saveToBD(connection, file, idNewBuild, relativePath);
+                    }
+                    else {
+
+                    }
+                }
+                /*for (RequestValueFolder requestValueFolder :
+                        requestValue.getMyArray()) {
+                    File file = new File(requestValueFolder.getCurrantUnit());
+
+
+                    if(file.isFile()){
+                        insertRecord(connection, idNewBuild, relativePath, requestValueFolder.getCurrantUnit());
+                        saveToFile(requestValueFolder.getCurrantUnit());
+                    }
+                    else if(file.isDirectory()){
+                        saveToBD(connection, file, idNewBuild, relativePath);
+                    }
+                    else {
+
+                    }
+                }*/
             }
         }
+
     }
 
     private void saveToBD(Connection connection, File file, int idNewBuild, String relativePath){

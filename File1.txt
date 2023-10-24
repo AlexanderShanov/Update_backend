@@ -1,0 +1,87 @@
+
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 28x18x1.0.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 28x18x1.2.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 28x30х1.8.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 38x40x2.0.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 1
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 28x18x1.0.png relativePath: /2.Консоли/Подкатегория 1/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 28x18x1.2.png relativePath: /2.Консоли/Подкатегория 1/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 28x30х1.8.png relativePath: /2.Консоли/Подкатегория 1/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 38x40x2.0.png relativePath: /2.Консоли/Подкатегория 1/png
+go to directory: relativePath: /2.Консоли/Подкатегория 1
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 38x40x2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x124Dx2.5.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x21x2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x41x2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x42Dx2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x62x2.5.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x82Dx2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 2
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x124Dx2.5.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x21x2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x41x2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x42Dx2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x62x2.5.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x82Dx2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+go to directory: relativePath: /2.Консоли/Подкатегория 2
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\dwg\Консоль седельная TCA U 41x21x2.0.xxx relativePath: /2.Консоли/Подкатегория 3/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\dwg\Консоль седельная TCA U 41x41х2.0.xxx relativePath: /2.Консоли/Подкатегория 3/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\dwg\Консоль седельная TCA U 41x62x2.5.xxx relativePath: /2.Консоли/Подкатегория 3/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 3
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\png\Консоль седельная TCA U 41x21x2.0.png relativePath: /2.Консоли/Подкатегория 3/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\png\Консоль седельная TCA U 41x41х2.0.png relativePath: /2.Консоли/Подкатегория 3/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\png\Консоль седельная TCA U 41x62x2.5.png relativePath: /2.Консоли/Подкатегория 3/png
+go to directory: relativePath: /2.Консоли/Подкатегория 3
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\dwg\Заглушка профиля TEC SC 41x21.xxx relativePath: /2.Консоли/Подкатегория 4/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\dwg\Заглушка профиля TEC SC 41x41.xxx relativePath: /2.Консоли/Подкатегория 4/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 4
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\png\Заглушка профиля TEC SC 41x21.png relativePath: /2.Консоли/Подкатегория 4/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\png\Заглушка профиля TEC SC 41x41.png relativePath: /2.Консоли/Подкатегория 4/png
+go to directory: relativePath: /2.Консоли/Подкатегория 4
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 28x18x1.0.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 28x18x1.2.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 28x30х1.8.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\dwg\Консоль TCA 38x40x2.0.xxx relativePath: /2.Консоли/Подкатегория 1/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 1
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 28x18x1.0.png relativePath: /2.Консоли/Подкатегория 1/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 28x18x1.2.png relativePath: /2.Консоли/Подкатегория 1/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 28x30х1.8.png relativePath: /2.Консоли/Подкатегория 1/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 1\png\Консоль TCA 38x40x2.0.png relativePath: /2.Консоли/Подкатегория 1/png
+go to directory: relativePath: /2.Консоли/Подкатегория 1
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 38x40x2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x124Dx2.5.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x21x2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x41x2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x42Dx2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x62x2.5.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\dwg\Консоль TCA 41x82Dx2.0.xxx relativePath: /2.Консоли/Подкатегория 2/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 2
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x124Dx2.5.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x21x2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x41x2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x42Dx2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x62x2.5.png relativePath: /2.Консоли/Подкатегория 2/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 2\png\Консоль TCA 41x82Dx2.0.png relativePath: /2.Консоли/Подкатегория 2/png
+go to directory: relativePath: /2.Консоли/Подкатегория 2
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\dwg\Консоль седельная TCA U 41x21x2.0.xxx relativePath: /2.Консоли/Подкатегория 3/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\dwg\Консоль седельная TCA U 41x41х2.0.xxx relativePath: /2.Консоли/Подкатегория 3/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\dwg\Консоль седельная TCA U 41x62x2.5.xxx relativePath: /2.Консоли/Подкатегория 3/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 3
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\png\Консоль седельная TCA U 41x21x2.0.png relativePath: /2.Консоли/Подкатегория 3/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\png\Консоль седельная TCA U 41x41х2.0.png relativePath: /2.Консоли/Подкатегория 3/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 3\png\Консоль седельная TCA U 41x62x2.5.png relativePath: /2.Консоли/Подкатегория 3/png
+go to directory: relativePath: /2.Консоли/Подкатегория 3
+go to directory: relativePath: /2.Консоли
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\dwg\Заглушка профиля TEC SC 41x21.xxx relativePath: /2.Консоли/Подкатегория 4/dwg
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\dwg\Заглушка профиля TEC SC 41x41.xxx relativePath: /2.Консоли/Подкатегория 4/dwg
+go to directory: relativePath: /2.Консоли/Подкатегория 4
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\png\Заглушка профиля TEC SC 41x21.png relativePath: /2.Консоли/Подкатегория 4/png
+save file: fileStr.getPath(): C:\Work\9_java\UpData\Data\AutoCad\2.Консоли\Подкатегория 4\png\Заглушка профиля TEC SC 41x41.png relativePath: /2.Консоли/Подкатегория 4/png
+go to directory: relativePath: /2.Консоли/Подкатегория 4
+go to directory: relativePath: /2.Консоли

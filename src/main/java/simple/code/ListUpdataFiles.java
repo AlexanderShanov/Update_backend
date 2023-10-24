@@ -1,5 +1,6 @@
 package simple.code;
 
+import simple.dao.pool;
 import simple.data.ChangeVersion;
 import simple.data.ChangeVersionInfoFiles;
 import simple.data.InfoFile;
@@ -25,7 +26,7 @@ public class ListUpdataFiles {
 
 
     public static void main(String[] args) throws SQLException {
-        ChangeVersion changeVersion = new ChangeVersion("0", "5");
+        ChangeVersion changeVersion = new ChangeVersion("0", "7");
 
         ListUpdataFiles listUpdataFiles = new ListUpdataFiles(changeVersion);
         String json = listUpdataFiles.getJsonListUpdataFilesFromBD();
@@ -68,7 +69,7 @@ public class ListUpdataFiles {
         String json = "";
         if(changeVersion.getIdNewVersion() != null && changeVersion.getIdNewVersion() != null)
         {
-            try(var connection = DriverManager.getConnection(URL, USER, PASSWORD)){
+            try(var connection = pool.getConnection()){
                 connection.setAutoCommit(false);
                 InfoFile[] filesAdd = getArrayInfoFilesExcept(changeVersion.getIdCurrentVersion(), changeVersion.getIdNewVersion(), connection);
                 InfoFile[] filesDelete = getArrayInfoFilesExcept(changeVersion.getIdNewVersion(), changeVersion.getIdCurrentVersion(), connection);
