@@ -37,10 +37,6 @@ import org.slf4j.LoggerFactory;*/
 public class SimpleController2 {
     private final Logger LOGGER = LoggerFactory.getLogger(SimpleController2.class);
 
-    /*import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
-    Logger logger = LogManager.getLogger(AppListener.class);*/
 
     @PostMapping("/simple2")
     public ResponseEntity<String> simple2(@RequestBody String inputData) {
@@ -63,7 +59,33 @@ import org.apache.logging.log4j.Logger;
 
         return ResponseEntity.ok()
                 .headers(responseHeaders)
-                .body("{\"pizdec\":\"pizdec12__12_23\"}");
+                .body("{\"pizdec\":\"pizdec12__18_23\"}");
+    }
+
+    @PostMapping("/CreateNewBuildFromDecktopRequest")
+    public ResponseEntity<String> CreateNewBuildFromDecktopRequest(@RequestBody String inputData) {
+        HttpHeaders responseHeaders = new HttpHeaders();
+
+        try(FileWriter writer = new FileWriter("CreateNewBuildFromDecktopRequestJson.txt", true))
+        {
+            writer.write(inputData);
+            writer.flush();
+        }
+        catch(IOException ex){
+
+            System.out.println(ex.getMessage());
+        }
+
+        String json = inputData;
+        LOGGER.error(inputData);
+        DataBaseWork  dataBaseWork = new DataBaseWork();
+        dataBaseWork.creadeNewRelease(json);
+        LOGGER.error("getAllNameVersionLogger123321");
+        System.out.println("pizdec");
+
+        return ResponseEntity.ok()
+                .headers(responseHeaders)
+                .body("{\"pizdec\":\"pizdec12__18_23\"}");
     }
 
 
