@@ -29,10 +29,8 @@ public class DataBaseWork {
             LOGGER.error("1");
             RequestValue requestValue = Serialize.deserialize(json);
             LOGGER.error("2");
-            //saveToFile(requestValue, json);
-            LOGGER.error("3");
             saveToBD(requestValue);
-            LOGGER.error("4");
+            LOGGER.error("3");
         }
         catch (Exception e){
             LOGGER.error(e.toString());
@@ -65,11 +63,11 @@ public class DataBaseWork {
                 "C:/Work/9_java/UpData/Data/AutoCad/2.Консоли"
         };
         DataBaseWork dataBaseWork  = new DataBaseWork();
-        dataBaseWork.saveToBD_Test(folders);
+        //dataBaseWork.saveToBD_Test(folders);
         System.out.println("Hello world!");
     }
 
-
+/*
 
     public void saveToBD_Test(String[] filesName) throws SQLException{
         if(filesName.length >0)
@@ -99,7 +97,7 @@ public class DataBaseWork {
         }
 
     }
-
+*/
     private void saveToBD(RequestValue requestValue) throws SQLException{
         LOGGER.error("requestValue: 1" );
         if(requestValue.getMyArray().length > 0){
@@ -112,52 +110,38 @@ public class DataBaseWork {
                 for (RequestValueFolder requestValueFolder  :
                         requestValue.getMyArray()) {
                     String fileName = requestValueFolder.getCurrantUnit();
+                    String idTargetFirstPath = requestValueFolder.getIdTargetFirstPath();
                     File file = new File(fileName);
                     if(file.isFile()){
-
-                        insertRecord(connection, idNewBuild, relativePath, fileName);
-                        LOGGER.error("fileName:" + fileName);
+                        insertRecord(connection, idNewBuild, relativePath, fileName, idTargetFirstPath);
+                        //LOGGER.error("fileName:" + fileName);
                         saveToFile( "save file: ile.getName(): " + file.getName() + " fileName: " + fileName);
                     }
                     else if(file.isDirectory()){
-                        saveToBD(connection, file, idNewBuild, relativePath);
+                        saveToBD(connection, file, idNewBuild, relativePath, idTargetFirstPath);
                     }
                     else {
-
+                        LOGGER.error(" it is not correct path: " + fileName);
                     }
                 }
-                /*for (RequestValueFolder requestValueFolder :
-                        requestValue.getMyArray()) {
-                    File file = new File(requestValueFolder.getCurrantUnit());
 
-
-                    if(file.isFile()){
-                        insertRecord(connection, idNewBuild, relativePath, requestValueFolder.getCurrantUnit());
-                        saveToFile(requestValueFolder.getCurrantUnit());
-                    }
-                    else if(file.isDirectory()){
-                        saveToBD(connection, file, idNewBuild, relativePath);
-                    }
-                    else {
-
-                    }
-                }*/
             }
         }
 
     }
 
-    private void saveToBD(Connection connection, File file, int idNewBuild, String relativePath){
+    private void saveToBD(Connection connection, File file, int idNewBuild, String relativePath, String idTargetFirstPath){
         try{
             File[] files = file.listFiles();
             relativePath += "/" + file.getName();
             for (File fileStr: files) {
                 if(fileStr.isFile()){
-                    insertRecord(connection, idNewBuild, relativePath, fileStr.getPath());
+                    LOGGER.error("100");
+                    insertRecord(connection, idNewBuild, relativePath, fileStr.getPath(), idTargetFirstPath);
                     saveToFile( "save file: fileStr.getPath(): " + fileStr.getPath() + " relativePath: " + relativePath);
                 }
                 else if(fileStr.isDirectory()){
-                    saveToBD(connection, fileStr, idNewBuild, relativePath);
+                    saveToBD(connection, fileStr, idNewBuild, relativePath, idTargetFirstPath);
                     saveToFile( "go to directory: relativePath: " + relativePath);
                 }
                 else {
@@ -245,19 +229,21 @@ public class DataBaseWork {
         }
     }
 
-    private void insertRecord(Connection connection, int idNewBuild, String relativePath, String Name) throws SQLException{
+    private void insertRecord(Connection connection, int idNewBuild, String relativePath, String Name, String idTargetFirstPath) throws SQLException{
 
 
         byte[] fileArray = null;
 
         try(FileInputStream fin=new FileInputStream(Name))
         {
+            LOGGER.error("101");
             File file = new File(Name);
             relativePath += "/" + file.getName();
             fileArray = fin.readAllBytes();
             System.out.println("fileArray.length: "+ fileArray.length);
             int idFile = insertRecordFile(connection, fileArray);
-            insertRecordFileBuild(connection, idNewBuild, idFile, relativePath);
+            LOGGER.error("102");
+            insertRecordFileBuild(connection, idNewBuild, idFile, relativePath, idTargetFirstPath);
 
         }
         catch(IOException ex){
@@ -278,7 +264,7 @@ public class DataBaseWork {
             return id;
         }
         else {
-            try(var pst = connection.prepareStatement("insert into files(id, value, chack_amount) values (?, ?, ?)")) {
+            try(var pst = connection.prepareStatement("insert into files(file_id, file_body, chack_amount) values (?, ?, ?)")) {
                 id = getMaxIdFiles(connection);
                 id++;
                 var savePoint = connection.setSavepoint("savePointName");
@@ -301,7 +287,7 @@ public class DataBaseWork {
     }
 
     private int searchIdFile(Connection connection, long chackAmount) throws SQLException {
-        try(var pst = connection.prepareStatement("select id from files where chack_amount = ?")){
+        try(var pst = connection.prepareStatement("select file_id from files where chack_amount = ?")){
             pst.setLong(1, chackAmount);
             try(var rs = pst.executeQuery()){
                 if(rs.next()){
@@ -314,16 +300,17 @@ public class DataBaseWork {
         return 0;
     }
 
-    private int insertRecordFileBuild(Connection connection, int idNewBuild  , int idFile, String relativePath) throws SQLException {
+    private int insertRecordFileBuild(Connection connection, int idNewBuild  , int idFile, String relativePath, String idTargetFirstPath) throws SQLException {
 
         int id = getMaxIdBuild(connection);
         id++;
-        try(var pst = connection.prepareStatement("insert into builds(id, build_version, file_id, file_path) values (?, ?, ?, ?)")) {
+        try(var pst = connection.prepareStatement("insert into builds(id_element, build_version, file_id, file_path, id_target_path) values (?, ?, ?, ?, ?)")) {
             var savePoint = connection.setSavepoint("savePointName");
             pst.setInt(1, id);
             pst.setInt(2, idNewBuild);
             pst.setInt(3, idFile);
             pst.setString(4, relativePath);
+            pst.setString(5, idTargetFirstPath);
             try{
                 var rowCount = pst.executeUpdate();
                 connection.commit();
@@ -368,12 +355,11 @@ public class DataBaseWork {
     }
 
     private int getMaxIdBuild(Connection connection) throws SQLException {
-        try(var pst = connection.prepareStatement("select max(id) from builds")){
-            //pst.setString(1, nameTable);
+        try(var pst = connection.prepareStatement("select max(id_element) from builds")){
             try(var rs = pst.executeQuery()){
                 if(rs.next()){
                     int id = rs.getInt(1);
-                    System.out.println("builds max(id): " + id);
+                    System.out.println("builds max(id_element): " + id);
                     return id;
                 }
             }
@@ -395,12 +381,12 @@ public class DataBaseWork {
     }
 
     private int getMaxIdFiles(Connection connection) throws SQLException {
-        try(var pst = connection.prepareStatement("select max(id) from files")){
+        try(var pst = connection.prepareStatement("select max(file_id) from files")){
             //pst.setString(1, nameTable);
             try(var rs = pst.executeQuery()){
                 if(rs.next()){
                     int id = rs.getInt(1);
-                    System.out.println("files max(id): " + id);
+                    System.out.println("files max(file_id): " + id);
                     return id;
                 }
             }

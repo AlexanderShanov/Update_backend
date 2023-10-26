@@ -9,16 +9,20 @@ import lombok.ToString;
 public class RequestValueFolder {
     @JsonProperty("currantUnit")
     private final String currantUnit;
-    @JsonProperty("targetFolder")
-    private final String targetFolder;
+    @JsonProperty("idTargetFirstPath")
+    private final String idTargetFirstPath;
     public RequestValueFolder(
             @JsonProperty("currantUnit") String currantUnit,
-            @JsonProperty("targetFolder") String targetFolder){
+            @JsonProperty("targetFolder") String idTargetFirstPath){
         this.currantUnit = currantUnit;
-        this.targetFolder = targetFolder;
+        this.idTargetFirstPath = idTargetFirstPath;
     }
 
     public String getCurrantUnit() {
         return currantUnit;
+    }
+
+    public String getIdTargetFirstPath() {
+        return idTargetFirstPath;
     }
 }

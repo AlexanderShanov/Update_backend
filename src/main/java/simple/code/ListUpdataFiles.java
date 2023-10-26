@@ -50,8 +50,8 @@ public class ListUpdataFiles {
 
     public String getJsonListUpdataFilesTest() {
 
-        InfoFile[] filesAdd = new InfoFile[]{new InfoFile(1, "qwerty1.txt"),new InfoFile(2, "qwerty2.txt") };
-        InfoFile[] filesDelete = new InfoFile[]{new InfoFile(3, "qwerty3.txt"),new InfoFile(4, "qwerty4.txt") };
+        InfoFile[] filesAdd = new InfoFile[]{new InfoFile(1, "qwerty1.txt", "0"),new InfoFile(2, "qwerty2.txt", "0") };
+        InfoFile[] filesDelete = new InfoFile[]{new InfoFile(3, "qwerty3.txt", "0"),new InfoFile(4, "qwerty4.txt", "0") };
 
         ChangeVersionInfoFiles changeVersionInfoFiles = new ChangeVersionInfoFiles(filesAdd, filesDelete);
         String json = "";
@@ -90,9 +90,9 @@ public class ListUpdataFiles {
     private InfoFile[] getArrayInfoFilesExcept(String idCurrent, String idNew, Connection connection) throws SQLException{
         List<InfoFile> builds = new ArrayList<>();
         try(var pst = connection.prepareStatement(
-                "select file_id, file_path from builds where build_version = ? " +
+                "select file_id, file_path, id_target_path from builds where build_version = ? " +
                         "except " +
-                        "select file_id, file_path from builds where build_version = ?")) {
+                        "select file_id, file_path, id_target_path from builds where build_version = ?")) {
             var savePoint = connection.setSavepoint("savePointName");
             int idNewInt = Integer.parseInt(idNew);
             int idCurrentInt = Integer.parseInt(idCurrent);
@@ -102,8 +102,9 @@ public class ListUpdataFiles {
                 while(rs.next()){
                     Integer id = rs.getInt(1);
                     String path = rs.getString(2);
-                    System.out.println("get id: " + id + " path: " + path);
-                    builds.add(new InfoFile(id, path));
+                    String id_target_path = rs.getString(3);
+                    System.out.println("get id: " + id + " path: " + path + " id_target_path: " + id_target_path);
+                    builds.add(new InfoFile(id, path, id_target_path));
                 }
             }
         }
