@@ -41,10 +41,7 @@ public class SimpleController2 {
     @PostMapping("/simple2")
     public ResponseEntity<String> simple2(@RequestBody String inputData) {
         HttpHeaders responseHeaders = new HttpHeaders();
-       /* responseHeaders.set("Access-Control-Allow-Origin", "*");
-        responseHeaders.set("Access-Control-Allow-Headers","application/json, Content-Type, " +
-                "origin, content-type, accept, authorization, X-Auth-Token");
-        responseHeaders.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD");*/
+       /* запрос на создание билда из веб страницы*/
 
         // запись всей строки
         String text = inputData;
@@ -55,7 +52,6 @@ public class SimpleController2 {
         dataBaseWork.creadeNewRelease(json);
 
         System.out.println("pizdec");
-        //return "{\"pizdec\":\"pizdec123\"}";
 
         return ResponseEntity.ok()
                 .headers(responseHeaders)
@@ -64,6 +60,8 @@ public class SimpleController2 {
 
     @PostMapping("/CreateNewBuildFromDecktopRequest")
     public ResponseEntity<String> CreateNewBuildFromDecktopRequest(@RequestBody String inputData) {
+        /* запрос на создание билда из Decktop*/
+
         HttpHeaders responseHeaders = new HttpHeaders();
 
         try(FileWriter writer = new FileWriter("CreateNewBuildFromDecktopRequestJson.txt", true))
@@ -72,20 +70,18 @@ public class SimpleController2 {
             writer.flush();
         }
         catch(IOException ex){
-
-            System.out.println(ex.getMessage());
+            LOGGER.error("CreateNewBuildFromDecktopRequest: " + ex.getMessage());
         }
 
         String json = inputData;
-        LOGGER.error(inputData);
+        LOGGER.error("CreateNewBuildFromDecktopRequest: " + inputData);
         DataBaseWork  dataBaseWork = new DataBaseWork();
         dataBaseWork.creadeNewRelease(json);
-        LOGGER.error("getAllNameVersionLogger123321");
-        System.out.println("pizdec");
+        LOGGER.error("CreateNewBuildFromDecktopRequest123321");
 
         return ResponseEntity.ok()
                 .headers(responseHeaders)
-                .body("{\"pizdec\":\"pizdec12__18_23\"}");
+                .body("{\"CreateNewBuildFromDecktopRequest\":\"OK\"}");
     }
 
 
@@ -150,6 +146,8 @@ public class SimpleController2 {
 
     @PostMapping("/ControllerMultipartGet")
     public ResponseEntity<String> ControllerMultipartGet() {
+
+        //
         System.out.println("1");
         CloseableHttpClient httpclient = HttpClients.custom()
                 .setRedirectStrategy(new LaxRedirectStrategy()) // adds HTTP REDIRECT support to GET and POST methods
