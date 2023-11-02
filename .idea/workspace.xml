@@ -10,14 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d29f6c75-f17f-4c6a-ad30-6ba339694d57" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/code/DataBaseWork.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/code/DataBaseWork.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/code/ListUpdataFiles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/code/ListUpdataFiles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/code/LoggerSyslog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/controllers/ControllerMultipart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/controllers/ControllerMultipart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/controllers/SimpleController2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/controllers/SimpleController2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/data/InfoFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/data/InfoFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/simple/data/RequestValueFolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/data/RequestValueFolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/simple/dao/pool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/simple/dao/pool.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
